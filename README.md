@@ -8,9 +8,12 @@
 
 ## 部署方式
 
-- 配置cloudflare的Work
+- 创建cloudflare的Work
+- 选择使用Workers AI Workers 模板
 - 把[index.js](./index.js)的内容粘贴到cloudflare的work中
 - 在cloudflare > work > 触发器,配置自定义域名
+  
+<img src=./screenshot-1705649100494.png width=60% />
   
 ## 测试
 
