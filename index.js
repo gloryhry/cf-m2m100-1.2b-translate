@@ -1,5 +1,3 @@
-// 引入@cloudflare/ai.js
-import { Ai } from './vendor/@cloudflare/ai.js';
 function convertLanguageCodeToName(code) {
   switch (code.toLowerCase()) {
     case 'bg':
@@ -119,9 +117,8 @@ export default {
         const requestBody = await request.json();
         // console.log(requestBody);
 
-        const ai = new Ai(env.AI);
         // 调用翻译函数
-        const translationResult = await ai.run('@cf/meta/m2m100-1.2b', {
+        const translationResult = await env.AI.run('@cf/meta/m2m100-1.2b', {
           text: requestBody.text,
           source_lang: convertLanguageCodeToName(requestBody.source_lang), // defaults to english
           target_lang: convertLanguageCodeToName(requestBody.target_lang)
